@@ -1,0 +1,111 @@
+/* Author: Isabel Zhuang*/
+
+<style>
+    .tabs-left {
+        border-bottom: none;
+        padding-top: 2px;
+    }
+    .tabs-left {
+        border-right: 1px solid #ddd;
+    }
+    .tabs-left>li {
+        float: none;
+        margin-bottom: 2px;
+    }
+    .tabs-left>li {
+        margin-right: -1px;
+    }
+    .tabs-left>li.active>a,
+    .tabs-left>li.active>a:hover,
+    .tabs-left>li.active>a:focus {
+        border-bottom-color: #ddd;
+        border-right-color: transparent;
+        background-color: #fbfbfb;
+    }
+    .tabs-left>li>a {
+        border-radius: 4px 0 0 4px;
+        margin-right: 0;
+        display: block;
+    }
+    .nav-tabs {
+        border-bottom: transparent;
+    }
+    .nav>li>a:focus,
+    .nav>li>a:hover {
+        text-decoration: none;
+        background-color: #E7F3FF;
+    }
+    .navbar-default .navbar-toggle:focus,
+    .navbar-default .navbar-toggle:hover {
+        background-color: #f1f1f1;
+    }
+    .navbar-default .navbar-brand,
+    .glyphicon-flag,
+    .glyphicon-cog,
+    .glyphicon-user,
+    .dropdown-toggle {
+        color: #337ab7;
+    }
+    .glyphicon:hover {
+        color: #23527c;
+    }
+    .navbar-default .navbar-nav>li>a:hover {
+        color: #23527c;
+    }
+    .navbar-default .navbar-brand:hover {
+        color: #23527c;
+    }
+    #hide {
+        background-color: #f00;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    .badge {
+        background-color: #337ab7;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    .dropdown-toggle:hover {
+        color: #23527c;
+        background-color: transparent;
+        border-color: transparent;
+    }
+    .dropdown-toggle {
+        border: 0px;
+        padding: 15px;
+        background-color: transparent;
+        font-family: 'Lato', sans-serif;
+        font-size: 18px;
+    }
+    .navbar-default .navbar-toggle:hover {
+        border-color: #fff;
+    }
+    .navbar-default,
+    .panel .panel-default {
+        background-color: #f1f1f1;
+        border-color: #eeeeee;
+    }
+    body {
+        font-family: 'Lato', sans-serif;
+        font-size: 18px;
+        background-image: url(background.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    #modalTitle {
+        color: #23527c;
+    }
+    .modal-header {
+        background-color: #eeeeee;
+    }
+    .jumbotron {
+        padding-top: 20px;
+        padding-bottom: 25px;
+        background-color: #fbfbfb;
+        border-radius: 4px;
+    }
+    h4 {
+        font-size: 20px;
+    }
+    #text-event {
+        text-decoration: underline;
+    }
+</style>

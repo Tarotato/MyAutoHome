@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<!-- Author: Isabel Zhuang-->
+<html lang=en>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Following usings from  MaxCDN -->
+    <!-- Latest compiled and minified CSS-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Font for XYX-->
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome Link-->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!--Favicon-->
+    <link href="./images/logo.png" rel="icon" type="image/png" style="height: 16px;" />
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!-- Toggle Button-->
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <!-- Changes Dropdown Language-->
+    <script>
+        function dropdown(val) {
+            var languages = document.getElementsByClassName('btn btn-default dropdown-toggle');
+            var currentLanguage = languages[0].innerHTML = val + ' <span class="caret"></span>'; // Append http://stackoverflow.com/questions/32496383/bootstrap-changing-dropdown-button-text-to-reflect-item-clicked-removes-care
+        }
+    </script>
+    <!-- Toggels Security Switch and modal dialog size-->
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+        $('#myModal').on('shown.bs.modal', function() {
+            $('#myInput').focus()
+        })
+    </script>
+    <!-- Hide notification number-->
+    <script>
+        function hideNotif() {
+            document.getElementById("hide").style.display = "none";
+        }
+    </script>
+    <title>MyAutoHome - Home</title>
+</head>
+
+<body>
+    <!-- Navigation bar-->
+    <nav class="navbar navbar-default navbar" style="margin-bottom: 0px">
+        <div class="container">
+            <header>
+                <!-- Logo-->
+                <a class="navbar-brand" style="margin: 0px; padding-top: 1px;"> <img id="logo" alt="Brand" src="./images/logo.png" style="height: 45px;"> </a>
+                <a class="navbar-brand" href="./index.html"> <span style="font-family: 'Orbitron', sans-serif; font-size:22px; font-weight: 700;">MyAutoHome </span> <span style="font-family: 'Lato', sans-serif; font-size:18px;">by XYZ</span> </a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            </header>
+            <!-- Language Menu and Glyphicons-->
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <div class="container-fluid">
+                        <!-- Language button -->
+                        <div class="btn-group">
+                            <ul class="nav navbar-nav">
+                                <li>
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-toggle="tooltip" title="Language"> English <span class="caret"></span> </button>
+                                    <ul class="dropdown-menu">
+                                        <li onclick="dropdown(this.innerHTML);"><a href="#">English</a> </li>
+                                        <li onclick="dropdown(this.innerHTML);"><a href="#">日本語</a> </li>
+                                    </ul>
+                                </li>
+                                <!-- Notification Flag and Modal Pop up Window -->
+                                <li><a href="#"><big>
+										<span class="glyphicon glyphicon-flag" onclick="hideNotif()" data-toggle="modal" data-target="#notificationModal" data-toggle="tooltip" title="Notifications"></span>
+										<span id="hide" class="badge" onclick="hideNotif()" data-toggle="modal" data-target="#notificationModal">1</span></big>
+										</a>
+                                    <!-- Modal Notification Window-->
+                                    <div class="modal fade" id="notificationModal" role="dialog">
+                                        <div class="modal-dialog modal-sm">
+                                            <!-- Window content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 id="modalTitle" class="modal-title">Notifications</h4> </div>
+                                                <div class="modal-body">
+                                                    <h4>Appliance Error</h4>
+                                                    <label>7:56am Dishwasher Malfunction.</label>
+                                                    <br>
+                                                    <p>Please check the appliances in your home.</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a href="#"><big><span class="glyphicon glyphicon-cog"></span></big></a>
+                                </li>
+                                <li><a href="#"><big><span class="glyphicon glyphicon-user"></span></big></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container jumbotron">
+        <section>
+            <div class="col-xs-4">
+                <!-- Take up 3 coloumns out of 12 on the screen-->
+                <!-- Navigation Tabs -->
+                <ul class="nav nav-tabs tabs-left">
+                    <li class="active"><a href="#home" data-toggle="tab"><big><span class="glyphicon glyphicon-home"></span></big> &ensp;Home</a> </li>
+                    <li><a href="#tab1" data-toggle="tab"><big><span class="glyphicon glyphicon-book"></span></big> &ensp;Doors</a> </li>
+                    <li><a href="#tab2" data-toggle="tab"><big><span class="glyphicon glyphicon-th-large"></span></big> &ensp;Windows</a> </li>
+                    <li><a href="#tab3" data-toggle="tab"><big><span class="glyphicon glyphicon-lamp"></span></big> &ensp;Lights</a> </li>
+                    <li><a href="#tab4" data-toggle="tab"><big><span class="glyphicon glyphicon-facetime-video"></span></big> &ensp;Security Cameras</a>
+                    </li>
+                    <li><a href="#tab5" data-toggle="tab"><big><span class="glyphicon glyphicon-cloud"></span></big> &ensp;Air Conditioning</a> </li>
+                    <li><a href="#tab6" data-toggle="tab"><big><span class="glyphicon glyphicon-off"></span></big> &ensp;Appliances</a> </li>
+                    <li><a href="#tab7" data-toggle="tab"><big><span class="glyphicon glyphicon-bullhorn"></span></big> &ensp;Announcements</a> </li>
+                    <ul class="nav nav-pills nav-stacked">
+                        <br>
+                        <li style="text-align: center;">
+                            <label style="padding-right: 30px">Security System Control</label>
+                            <label data-toggle="tooltip" title="Sets the Alarm and Locks the Front Door">
+                                <input id="toggle-event" onclick="a()" type="checkbox" checked data-toggle="toggle" data-on="Armed" data-off="Disarmed" data-onstyle="success"> </label>
+                        </li>
+                    </ul>
+                    <br> </ul>
+            </div>
+        </section>
+        <!-- Toggle script and associated notification-->
+        <script>
+            jQuery('#toggle-event').change(function() {
+                if (jQuery(this).is(':checked')) {
+                    jQuery('#text-event').html('Current System Status: Armed'); // Toggle is Armed.
+                    $("#text-event").css({
+                        'color': '#5cb85c'
+                    });
+                    $("#door-text").html('<span id "door-badge" class="badge">2/2</span>' + 'Doors: &ensp;All Locked');
+                    $("#summary").after('<div class="alert alert-success fadeOut alert-dismissable">' + '<button type="button" class="close" ' + 'data-dismiss="alert" aria-hidden="true">' + '&times;' + '</button>' + 'You have armed the house and locked the front door' + '&ensp;<i class="fa fa-lock"></i>' + '</div>');
+                    $(".alert").fadeOut(8000);
+                    $("#sec-cam").after('<div class="alert alert-success fadeOut alert-dismissable">' + '<button type="button" class="close" ' + 'data-dismiss="alert" aria-hidden="true">' + '&times;' + '</button>' + 'You have armed the house and locked the front door' + '&ensp;<i class="fa fa-lock"></i>' + '</div>');
+                    $(".alert").fadeOut(8000);
+                } else {
+                    jQuery('#text-event').html('Current System Status: Disarmed'); // Toggle is Disarmed.
+                    $("#text-event").css({
+                        'color': 'grey'
+                    });
+                    $("#door-text").html('<span id "door-badge" class="badge" style="background-color: #555;">1/2</span>' + 'Doors: &ensp;Front Door Unlocked');
+                    $("#summary").after('<div class="alert alert-info fadeOut alert-dismissable">' + '<button type="button" class="close" ' + 'data-dismiss="alert" aria-hidden="true">' + '&times;' + '</button>' + 'You have disarmed the house and unlocked the front door' + '&ensp;<i class="fa fa-unlock"></i>' + '</div>');
+                    $(".alert").fadeOut(8000);
+                    $("#sec-cam").after('<div class="alert alert-info fadeOut alert-dismissable">' + '<button type="button" class="close" ' + 'data-dismiss="alert" aria-hidden="true">' + '&times;' + '</button>' + 'You have disarmed the house and unlocked the front door' + '&ensp;<i class="fa fa-unlock"></i>' + '</div>');
+                    $(".alert").fadeOut(8000);
+                }
+            });
+        </script>
+        <section>
+            <!-- Navigation Tab Panes -->
+            <div class="col-xs-8">
+                <!-- Take up 9 coloumns out of 12 on the screen-->
+                <div class="tab-content">
+                    <!-- Home Tab Pane-->
+                    <div id="home" class="tab-pane fade in active">
+                        <div class="container-fluid">
+                            <h4 id="text-event" style="color: #5cb85c;">Current System Status: Armed</h4>
+                            <br>
+                            <div id="summary" class="panel panel-default">
+                                <div class="panel-heading">
+                                    <p> System Summary</p>
+                                </div>
+                                <ul class="list-group">
+                                    <li id="door-text" class="list-group-item"><span id "door-badge" class="badge">2/2</span>Doors:&ensp;All Locked</li>
+                                    <li class="list-group-item"><span class="badge">20/20</span>Windows:&ensp;All Closed</li>
+                                    <li class="list-group-item"><span class="badge">8/8</span>Lights:&ensp;All Off</li>
+                                    <li class="list-group-item"><span class="badge">4/4</span>Security Cameras:&ensp;All On</li>
+                                    <li class="list-group-item"><span class="badge">1/1</span>Air-Conditioning:&ensp;All Off</li>
+                                    <li class="list-group-item"><span class="badge">7/7</span>Appliances:&ensp;All Off</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab1" class="tab-pane fade container-fluid">
+                        <h4>Doors</h4>
+                        <br><img src="./images/floor.png" alt="floorplan" class="img-responsive" />
+                    </div>
+                    <div id="tab2" class="tab-pane fade container-fluid">
+                        <h4>Windows</h4>
+                        <br><img src="./images/floor.png" alt="floorplan" class="img-responsive" />
+                    </div>
+                    <div id="tab3" class="tab-pane fade container-fluid">
+                        <h4>Lights</h4>
+                        <br><img src="./images/floor.png" alt="floorplan" class="img-responsive" />
+                    </div>
+                    <!-- Security Camera Tab Pane -->
+                    <div id="tab4" class="tab-pane fade">
+                        <div class="container-fluid">
+                            <h4 style="color: #5cb85c;"><u>Security Cameras:&ensp;All On</u></h4>
+                            <br> <img id="sec-cam" alt="floorplan" src="./images/cameras.png" style="width:670px;height:425px" class="img-responsive" data-toggle="tooltip" title="Click on a camera to view the room" usemap="#cameramap"> </div>
+                        <map name="cameramap">
+                            <area shape="rect" coords="440,0,475,40" data-toggle="modal" data-target="#kitchenModal" data-toggle="tooltip" title="View Kitchen">
+                            <area shape="rect" coords="170,310,210,360" data-toggle="modal" data-target="#frontDoorModal" data-toggle="tooltip" title="View Front Door">
+                            <!-- Modal Kitchen Camera Window-->
+                            <div class="modal " id="kitchenModal" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Window content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 id="modalTitle" class="modal-title">Kitchen Camera</h4> </div>
+                                        <div class="modal-body"> <img src="./images/kitchen.png" alt="floorplan" class="img-responsive" /> </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Modal Front Door Camera Window-->
+                            <div class="modal fade" id="frontDoorModal" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Window content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 id="modalTitle" class="modal-title">Front Door Camera</h4> </div>
+                                        <div class="modal-body"> <img src="./images/frontdoor.png" alt="floorplan" class="img-responsive" /> </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </map>
+                    </div>
+                    <div id="tab5" class="tab-pane fade container-fluid">
+                        <h4>Air Conditioning</h4>
+                        <br><img src="./images/floor.png" alt="floorplan" class="img-responsive" />
+                    </div>
+                    <div id="tab6" class="tab-pane fade container-fluid">
+                        <h4>Appliances</h4>
+                        <br><img src="./images/floor.png" alt="floorplan" class="img-responsive" />
+                    </div>
+                    <div id="tab7" class="tab-pane fade container-fluid">
+                        <h4>Announcements</h4>
+                        <br><img src="./images/floor.png" alt="floorplan" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p style="font-size: 15px; float: right; padding-right: 15px;">&copy;Copyright 2016<span style="font-family: 'Orbitron', sans-serif;"> IZ Ltd.</span>
+        </p>
+    </footer>
+</body>
+
+</html>
